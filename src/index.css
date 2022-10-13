@@ -10,3 +10,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Styles for common elements */
+
+.button-turquoise {
+  font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+  background-color: #00BBB0;
+  border: none;
+  border-radius: 20px;
+}
+
+.button-turquoise--main {
+  padding: 10px 20px;
+}
+
+.button-turquoise--large {
+  width: 100%;
+  padding: 10px 20px;
+}
+
+.button-turquoise--small {
+  padding: 5px 20px;
+}
