@@ -1,0 +1,21 @@
+.home {
+    max-width: 568px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.home__my-trips__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home__my-trips__button--add-trip {
+    margin-left: 14px;
+}
+
+.home__my-rewards__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
