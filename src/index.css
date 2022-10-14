@@ -5,6 +5,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   max-width: 750px;
   padding: 29px;
+  color: #333333;
 }
 
 code {
@@ -13,6 +14,13 @@ code {
 }
 
 /* Styles for common elements */
+
+h3 {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 39px;
+  margin: 0 15px 15px 15px;
+}
 
 .button-turquoise {
   font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
