@@ -1,5 +1,6 @@
 import React from 'react';
 import './Home.css';
+import Weather from '../../components/Weather/Weather';
 import {ReactComponent as PlusIcon} from '../../assets/Plus_icon.svg';
 
 export default function Home() {
@@ -8,7 +9,12 @@ export default function Home() {
       <div class="home__weather">
         <h3 class="home__weather__title">Weather for my next trip</h3>
         <div class="home__weather__items">
-          {/* 5 day weather items */}
+          {/* Change to get weather data dynamically */}
+          <Weather />
+          <Weather />
+          <Weather />
+          <Weather />
+          <Weather />
         </div>
       </div>
 
