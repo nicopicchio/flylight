@@ -1,0 +1,57 @@
+.weather {
+    color: white;
+    background-color: #00BBB0;
+    border-radius: 10px;
+    width: 100%;
+    margin: 5px;
+    padding: 8px;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box; /* Firefox, other Gecko */
+    box-sizing: border-box; /* Opera/IE 8+ */
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.weather__img {
+    width: 33px;
+    margin: 0 auto;
+}
+
+.weather__date {
+    font-size: 9px;
+    font-weight: 500;
+    margin: 0 auto 10px auto;
+}
+
+.weather__degrees {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 2px auto 0 auto;
+}
+
+/* Media queries */
+
+@media screen and (min-width: 500px) {
+    body {
+        background-color: yellow;
+    }
+
+    .weather {
+        padding: 12px;
+    }
+
+    .weather__img {
+        width: 56px;
+    }
+
+    .weather__date {
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+
+    .weather__degrees {
+        font-size: 32px;
+        margin-top: 8px;
+    }
+}
