@@ -9,7 +9,7 @@
 .home__weather__items {
     display: flex;
     justify-content: space-between;
-    margin: 0 auto 25px auto;
+    margin: 20px auto 25px auto;
 }
 
 .home__weather__items .weather:first-child {
@@ -32,6 +32,14 @@
     align-items: center;
 }
 
+.home__my-trips__items {
+    margin: 20px auto 25px auto;
+}
+
+.home__my-trips__items .trip:last-child {
+    margin-bottom: 0px;
+}
+
 /* My rewards */
 
 .home__my-rewards__title,
@@ -45,9 +53,14 @@
     align-items: center;
 }
 
+.home__my-rewards__items {
+    margin: 20px auto 0 auto;
+}
+
 /* Common for my trips and my rewards */
 
 .home__my-trips__button--see-all,
-.home__my-trips__button--add-trip, .home__my-rewards__button--see-all {
+.home__my-trips__button--add-trip, 
+.home__my-rewards__button--see-all {
     margin-left: 14px;
 }

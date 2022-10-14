@@ -11,5 +11,6 @@
 }
 
 .my-trips__items {
+    margin: 20px auto 0 auto;
     text-align: left;
 }

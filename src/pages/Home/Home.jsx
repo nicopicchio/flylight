@@ -43,7 +43,9 @@ export default function Home() {
           <h2 className="home__my-rewards__title">My rewards</h2>
           <Link to="/my-rewards" className="home__my-rewards__button--see-all button-turquoise button-turquoise--small">See all</Link>
         </div>
+        <div className="home__my-rewards__items">
         {/* reward level item */}
+        </div>
       </div>
     </div>
   )
