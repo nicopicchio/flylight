@@ -4,18 +4,34 @@
     text-align: left;
 }
 
+/* My Trips */
+
+.home__my-trips__title, .home__my-trips__buttons {
+    display: inline-block; /* fallback for flexbox */
+}
+
 .home__my-trips__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.home__my-trips__button--add-trip {
-    margin-left: 14px;
+/* My rewards */
+
+.home__my-rewards__title,
+.home__my-rewards__button--see-all {
+    display: inline-block; /* fallback for flexbox */
 }
 
 .home__my-rewards__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+/* Common for my trips and my rewards */
+
+.home__my-trips__button--see-all,
+.home__my-trips__button--add-trip, .home__my-rewards__button--see-all {
+    margin-left: 14px;
 }
