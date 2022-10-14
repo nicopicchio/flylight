@@ -18,7 +18,7 @@ export default function SetGoals() {
             <br /> flight is
           </p>
           <h2>xxxx kg</h2>
-          <p className='text--thin'>of CO2</p>
+          <p className='text--thin'>of CO₂</p>
         </div>
         <div className='hi'>
           <p className='text--thick'>My carry-on luggage goal</p>
@@ -39,7 +39,7 @@ export default function SetGoals() {
           </div>
         </div>
         <div>
-          <button className='button-turquoise button-turquoise--large'>
+          <button className='button-turquoise button-turquoise--main'>
             Set Goal
           </button>
         </div>

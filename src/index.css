@@ -14,10 +14,6 @@ code {
     monospace;
 }
 
-h2 {
-  font-size: 32px;
-}
-
 /* Styles for common elements */
 .button-turquoise {
   font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont,
