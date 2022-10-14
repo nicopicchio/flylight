@@ -1,7 +1,8 @@
 import React from 'react'
+import Header from '../../components/Header/Header'
 
 export default function MyTrips() {
   return (
-    <div>MyTrips</div>
+    <Header/>
   )
 }
