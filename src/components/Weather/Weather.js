@@ -6,10 +6,10 @@ import {ReactComponent as WeatherImg} from '../../assets/Weather_img.svg';
 
 export default function Weather() {
   return (
-    <div class="weather">
-      <p class="weather__date">26/11</p>
-      <div class="weather__img"><WeatherImg /></div>
-      <p class="weather__degrees">13°</p>
+    <div className="weather">
+      <p className="weather__date">26/11</p>
+      <div className="weather__img"><WeatherImg /></div>
+      <p className="weather__degrees">13°</p>
     </div>
   )
 }
