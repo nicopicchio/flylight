@@ -9,6 +9,7 @@
 .home__weather__items {
     display: flex;
     justify-content: space-between;
+    margin: 0 auto 25px auto;
 }
 
 .home__weather__items .weather:first-child {
