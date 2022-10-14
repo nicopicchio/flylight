@@ -35,3 +35,12 @@ code {
 .button-turquoise--small {
   padding: 5px 20px;
 }
+
+.button-grey {
+  color: #929292;
+  background-color: #D9D9D9;
+  border: none;
+  border-radius: 20px;
+  width: 28px;
+  height: 28px;
+}
