@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Home.css';
 import Weather from '../../components/Weather/Weather';
 import {ReactComponent as PlusIcon} from '../../assets/Plus_icon.svg';
@@ -22,8 +23,8 @@ export default function Home() {
         <div className="home__my-trips__header">
           <h3 className="home__my-trips__title">My trips</h3>
           <div className="home__my-trips__buttons">
-            <button className="home__my-trips__button--see-all button-turquoise button-turquoise--small">See all</button>
-            <button className="home__my-trips__button--add-trip button-grey"><PlusIcon /></button>
+            <Link to="/my-trips-summary" className="home__my-trips__button--see-all button-turquoise button-turquoise--small">See all</Link>
+            <Link to="/add-trip" className="home__my-trips__button--add-trip button-grey"><PlusIcon /></Link>
           </div>
         </div>
         <div className="home__my-trips__items">
@@ -34,7 +35,7 @@ export default function Home() {
       <div className="home__my-rewards">
         <div className="home__my-rewards__header">
           <h3 className="home__my-rewards__title">My rewards</h3>
-          <button className="home__my-rewards__button--see-all button-turquoise button-turquoise--small">See all</button>
+          <Link to="/my-rewards" className="home__my-rewards__button--see-all button-turquoise button-turquoise--small">See all</Link>
         </div>
         {/* reward level item */}
       </div>
