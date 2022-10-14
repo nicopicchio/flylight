@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
+import Header from '../../components/Header/Header';
 import Weather from '../../components/Weather/Weather';
 import Trip from '../../components/Trip/Trip';
 import {ReactComponent as PlusIcon} from '../../assets/Plus_icon.svg';
@@ -8,6 +9,8 @@ import {ReactComponent as PlusIcon} from '../../assets/Plus_icon.svg';
 export default function Home() {
   return (
     <div className="home">
+      <Header />
+
       <div className="home__weather">
         <h2 className="home__weather__title">Weather for my next trip</h2>
         <div className="home__weather__items">
