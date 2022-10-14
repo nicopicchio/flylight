@@ -30,10 +30,6 @@
 /* Media queries */
 
 @media screen and (min-width: 500px) {
-    body {
-        background-color: yellow;
-    }
-
     .weather {
         padding: 12px;
     }
