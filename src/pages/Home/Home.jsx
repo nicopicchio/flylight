@@ -4,6 +4,7 @@ import './Home.css';
 import Header from '../../components/Header/Header';
 import Weather from '../../components/Weather/Weather';
 import Trip from '../../components/Trip/Trip';
+import RewardLevel from '../../components/RewardLevel/RewardLevel';
 import {ReactComponent as PlusIcon} from '../../assets/Plus_icon.svg';
 
 export default function Home() {
@@ -44,7 +45,8 @@ export default function Home() {
           <Link to="/my-rewards" className="home__my-rewards__button--see-all button-turquoise button-turquoise--small">See all</Link>
         </div>
         <div className="home__my-rewards__items">
-        {/* reward level item */}
+          {/* reward level item, change to dynamic */}
+          <RewardLevel />
         </div>
       </div>
     </div>
