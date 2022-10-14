@@ -4,9 +4,21 @@
     width: 100%;
     margin: 0 auto 18px auto;
     padding: 16px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.reward-level__badge {
+    max-width: 45px;
+}
+
+.reward-level__badge__img {
+    width: 100%;
 }
 
 .reward-level__text {
+    width: 100%;
+    margin-left: 15px;
     display: flex;
     justify-content: space-between;
 }
