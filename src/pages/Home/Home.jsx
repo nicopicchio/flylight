@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 import Weather from '../../components/Weather/Weather';
+import Trip from '../../components/Trip/Trip';
 import {ReactComponent as PlusIcon} from '../../assets/Plus_icon.svg';
 
 export default function Home() {
@@ -10,7 +11,7 @@ export default function Home() {
       <div className="home__weather">
         <h3 className="home__weather__title">Weather for my next trip</h3>
         <div className="home__weather__items">
-          {/* 5 day weather items */}
+          {/* 5 day weather items, change to dynamic */}
           <Weather />
           <Weather />
           <Weather />
@@ -28,7 +29,9 @@ export default function Home() {
           </div>
         </div>
         <div className="home__my-trips__items">
-          {/* trip items */}
+          {/* trip items, change to dynamic */}
+          <Trip />
+          <Trip />
         </div>
       </div>
 
