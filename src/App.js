@@ -1,5 +1,5 @@
 import './App.css';
-import StartScreen from './components/StartScreen';
+import StartScreen from './components/StartScreen/StartScreen';
 
 function App() {
   return (
