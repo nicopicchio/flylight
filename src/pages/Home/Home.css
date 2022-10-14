@@ -4,6 +4,13 @@
     text-align: left;
 }
 
+/* Weather */
+
+.home__weather__items {
+    display: flex;
+    justify-content: space-between;
+}
+
 /* My Trips */
 
 .home__my-trips__title, .home__my-trips__buttons {
