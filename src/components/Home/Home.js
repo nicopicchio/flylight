@@ -1,6 +1,6 @@
 import React from 'react';
 import './Home.css';
-import {ReactComponent as PlusIcon} from '../assets/Plus_icon.svg';
+import {ReactComponent as PlusIcon} from '../../assets/Plus_icon.svg';
 
 export default function Home() {
   return (
