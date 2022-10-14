@@ -11,6 +11,14 @@
     justify-content: space-between;
 }
 
+.home__weather__items .weather:first-child {
+    margin-left: 0;
+}
+
+.home__weather__items .weather:last-child {
+    margin-right: 0;
+}
+
 /* My Trips */
 
 .home__my-trips__title, .home__my-trips__buttons {
