@@ -38,6 +38,8 @@ code {
 }
 
 .button-grey {
+  display: inline-block;
+  padding: 6px;
   color: #929292;
   background-color: #D9D9D9;
   border: none;
