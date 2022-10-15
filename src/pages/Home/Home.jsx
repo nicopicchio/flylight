@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Home.css';
 import Header from '../../components/Header/Header';
 import Weather from '../../components/Weather/Weather';
-import Trip from '../../components/Trip/Trip';
+import TripPreview from '../../components/Trip/TripPreview';
 import RewardLevel from '../../components/RewardLevel/RewardLevel';
 import {ReactComponent as PlusIcon} from '../../assets/Plus_icon.svg';
 
@@ -34,8 +34,8 @@ export default function Home() {
         </div>
         <div className="home__my-trips__items">
           {/* trip items, change to dynamic */}
-          <Trip />
-          <Trip />
+          <TripPreview />
+          <TripPreview />
         </div>
       </div>
 
