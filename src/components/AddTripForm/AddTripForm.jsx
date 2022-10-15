@@ -35,7 +35,7 @@ export default function AddTripForm({ formData, setFormData }) {
   return (
     <div className='addtripform'>
       <h2 className='addtripform--title'>Add Trip</h2>
-      <h3 className='addtripform--subtitle'>Enter Flight Details</h3>
+      <h4 className='addtripform--subtitle'>Enter Flight Details</h4>
       <form className='addtripform--form' onSubmit={handleSubmit}>
         <input
           type='text'
@@ -49,7 +49,7 @@ export default function AddTripForm({ formData, setFormData }) {
           id='addtrip--form--destination'
           name='destination'
           onChange={handleChange}
-          placeholder='Destination Airport..'
+          placeholder='DEST AIRPORT...'
         />
         <input
           type='date'
@@ -67,14 +67,16 @@ export default function AddTripForm({ formData, setFormData }) {
           <option value='Business'>Business</option>
           <option value='First'>First</option>
         </select>
-        <input
-          type='checkbox'
-          id='addtrip--form--carryon--checkbox'
-          name='carryOnCheckBox'
-          onChange={handleChange}
-          checked={formData.carryOnCheckBox}
-        />
-        <label htmlFor='carryOnCheckBox'>Carry-on luggage</label>
+        <div className='addtripform--form--checkbox'>
+          <input
+            type='checkbox'
+            id='addtrip--form--carryon--checkbox'
+            name='carryOnCheckBox'
+            onChange={handleChange}
+            checked={formData.carryOnCheckBox}
+          />
+          <label htmlFor='carryOnCheckBox'>Carry-on luggage</label>
+        </div>
         {formData.carryOnCheckBox && (
           <input
             type='number'
@@ -82,16 +84,19 @@ export default function AddTripForm({ formData, setFormData }) {
             name='carryOnWeight'
             onChange={handleChange}
             value={formData.carryOnWeight}
+            placeholder='Weight in Kg..'
           />
         )}
-        <input
-          type='checkbox'
-          id='addtrip--form--hold--checkbox'
-          name='holdCheckBox'
-          onChange={handleChange}
-          checked={formData.holdCheckBox}
-        />
-        <label htmlFor='carryOnCheckBox'>Hold luggage</label>
+        <div className='addtripform--form--checkbox'>
+          <input
+            type='checkbox'
+            id='addtrip--form--hold--checkbox'
+            name='holdCheckBox'
+            onChange={handleChange}
+            checked={formData.holdCheckBox}
+          />
+          <label htmlFor='carryOnCheckBox'>Hold luggage</label>
+        </div>
         {formData.holdCheckBox && (
           <input
             type='number'
@@ -99,13 +104,17 @@ export default function AddTripForm({ formData, setFormData }) {
             name='holdWeight'
             onChange={handleChange}
             value={formData.holdWeight}
+            placeholder='Weight in Kg..'
           />
         )}
-        <input
+
+        <button
           className='button-turquoise button-turquoise--main'
           type='submit'
           value='Next'
-        />
+        >
+          Add
+        </button>
       </form>
     </div>
   );

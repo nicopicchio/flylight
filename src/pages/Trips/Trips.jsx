@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Trips.css';
 import Header from '../../components/Header/Header';
-import Trip from '../../components/Trip/Trip';
+import TripPreview from '../../components/Trip/TripPreview';
 import {ReactComponent as PlusIcon} from '../../assets/Plus_icon.svg';
 
 export default function Trips() {
@@ -15,11 +15,11 @@ export default function Trips() {
         </div>
         <div className="my-trips__items">
           {/* trip items, change to dynamic */}
-          <Trip />
-          <Trip />
-          <Trip />
-          <Trip />
-          <Trip />
+          <TripPreview />
+          <TripPreview />
+          <TripPreview />
+          <TripPreview />
+          <TripPreview />
         </div>
       </div>
   )
