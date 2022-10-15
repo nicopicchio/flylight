@@ -12,14 +12,14 @@ const cleanPercentage = (percentage) => {
 
 // Create Circle component
 const Circle = ({ colour, percentage }) => {
-  const r = 21;
+  const r = 19;
   const circ = 2 * Math.PI * r;
   const strokePct = ((100 - percentage) * circ) / 100; // where stroke will start, e.g. from 15% to 100%.
   return (
     <circle
       r={r}
-      cx={175}
-      cy={25}
+      cx={177}
+      cy={23}
       fill="transparent"
       stroke={strokePct !== circ ? colour : ""} // remove colour as 0% sets full circumference
       strokeWidth={".5rem"}
@@ -33,7 +33,7 @@ const Circle = ({ colour, percentage }) => {
 const GoalChart = ({ percentage }) => {
   const pct = cleanPercentage(percentage);
   return (
-    <svg width={50} height={50}>
+    <svg width={46} height={46}>
       <g transform={`rotate(-90 ${"100 100"})`}>
         <Circle colour="#D9D9D9" />
         <Circle colour='#00BBB0' percentage={pct} />

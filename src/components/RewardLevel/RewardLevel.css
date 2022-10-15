@@ -3,7 +3,7 @@
     border-radius: 10px;
     width: 100%;
     margin: 0 auto 18px auto;
-    padding: 16px;
+    padding: 16px 16px 11px 16px;
     display: flex;
     justify-content: flex-start;
 }
