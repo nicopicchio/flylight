@@ -2,14 +2,17 @@ import React from 'react';
 import '../Header/Header.css'
 import backIcon from '../../assets/Back-icon.svg'
 import Switch from '@mui/material/Switch';
-import { Link } from 'react-router-dom'
+import { useNavigate  } from 'react-router-dom'
 
 export default function Header() {
+  const navigate = useNavigate()
+
   return (
     <div className='header-container'>
-      <Link className='back-btn' to='/'>
+      <button className='back-btn' onClick={() => navigate(-1)}>
         <img src={backIcon} alt="back button" />
-      </Link>
+      </button>
+
       <div className='switch-container'>
         <Switch/>
         <p className='eco-mode'>ECO</p>
