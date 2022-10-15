@@ -5,6 +5,7 @@ import Home from "./pages/Home/Home";
 import Header from "./components/Header/Header";
 import AddTripForm from "./components/AddTripForm/AddTripForm";
 import SetGoals from "./pages/SetGoals/SetGoals";
+import MyRewards from "./pages/MyRewards/MyRewards"
 import Trips from "./pages/Trips/Trips";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         />
         <Route path='/my-trips-summary' element={<Trips />} />
         <Route path='/set-goals' element={<SetGoals />} />
+        <Route path="/my-rewards" element={<MyRewards />} />
       </Routes>
     </div>
   );
