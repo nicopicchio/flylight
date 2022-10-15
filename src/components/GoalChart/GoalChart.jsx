@@ -25,6 +25,7 @@ const Circle = ({ colour, percentage }) => {
       strokeWidth={".5rem"}
       strokeDasharray={circ}
       strokeDashoffset={percentage ? strokePct : 0}
+      // stroke-linecap="round" // for rounded edges on progress bar
     ></circle>
   );
 };
