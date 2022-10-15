@@ -1,0 +1,16 @@
+.my-trips__title,
+.my-trips__button--add-trip {
+    display: inline-block; /* fallback for flexbox */
+}
+
+.my-trips__header {
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.my-trips__items {
+    margin: 20px auto 0 auto;
+    text-align: left;
+}

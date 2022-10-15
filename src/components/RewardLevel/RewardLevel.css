@@ -1,0 +1,47 @@
+.reward-level {
+    background-color: #F2F2F2;
+    border-radius: 10px;
+    width: 100%;
+    margin: 0 auto 18px auto;
+    padding: 16px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.reward-level__badge {
+    max-width: 45px;
+}
+
+.reward-level__badge__img {
+    width: 100%;
+}
+
+.reward-level__text {
+    width: 100%;
+    margin-left: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.reward-level__text__title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.reward-level__text__next-level {
+    font-size: 11px;
+    font-weight: 400;
+    color: #8A8A8A;
+}
+
+.reward-level__text__points {
+    font-size: 15px;
+    font-weight: 600;
+    text-align: right;
+}
+
+.reward-level__text__small {
+    font-size: 11px;
+    font-weight: 400;
+}

@@ -19,7 +19,7 @@ export default function AddTripForm() {
           id="addtrip--form--carryon--checkbox"
           name="carryOnCheckBox"
         />
-        <label for="carryOnCheckBox">Carry-on luggage</label>
+        <label htmlFor="carryOnCheckBox">Carry-on luggage</label>
         <input
           type="number"
           id="addtrip--form--carryon--weight"
@@ -30,7 +30,7 @@ export default function AddTripForm() {
           id="addtrip--form--hold--checkbox"
           name="holdCheckBox"
         />
-        <label for="carryOnCheckBox">Hold luggage</label>
+        <label htmlFor="carryOnCheckBox">Hold luggage</label>
         <input
           type="number"
           id="addtrip--form--hold--weight"
