@@ -6,7 +6,8 @@ export default function Trip() {
   return (
     <div className="trip">
       <div className="trip__goal-chart">
-        <GoalChart />
+        {/* Make percentage dynamic based on goal set for the trip (calcualte both carry-on + hold luggage together */}
+        <GoalChart percentage={40} /> 
       </div>
       <div className="trip__text">
         <div className="trip__text__trip-info">
