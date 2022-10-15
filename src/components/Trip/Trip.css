@@ -1,12 +1,15 @@
 .trip {
-    background-color: #F2F2F2;
+    background-color: #F1F2F2;
     border-radius: 10px;
     width: 100%;
     margin: 0 auto 18px auto;
     padding: 16px;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .trip__text {
+    width: 100%;
     margin-left: 15px;
     display: flex;
     justify-content: space-between;
