@@ -1,24 +1,12 @@
-import React from 'react';
-import './AddTripForm.css';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "./AddTripForm.css";
 
-export default function AddTripForm() {
-  const initialFormData = {
-    destination: '',
-    date: '',
-    class: '',
-    carryOnCheckBox: true,
-    carryOnWeight: '',
-    holdCheckBox: true,
-    holdWeight: '',
-  };
-
-  const [formData, setFormData] = React.useState(initialFormData);
-
-  console.log('formData:', formData);
+export default function AddTripForm({ formData, setFormData }) {
+  const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('submitted...');
-    return;
+    navigate("../set-goals");
   };
 
   function handleChange(event) {
@@ -41,7 +29,7 @@ export default function AddTripForm() {
           id='addtrip--form--destination'
           name='destination'
           onChange={handleChange}
-          placeholder="Destination Airport.."
+          placeholder='Destination Airport..'
         />
         <input
           type='date'
@@ -67,13 +55,15 @@ export default function AddTripForm() {
           checked={formData.carryOnCheckBox}
         />
         <label htmlFor='carryOnCheckBox'>Carry-on luggage</label>
-        {formData.carryOnCheckBox && <input
-          type='number'
-          id='addtrip--form--carryon--weight'
-          name='carryOnWeight'
-          onChange={handleChange}
-          value={formData.carryOnWeight}
-        />}
+        {formData.carryOnCheckBox && (
+          <input
+            type='number'
+            id='addtrip--form--carryon--weight'
+            name='carryOnWeight'
+            onChange={handleChange}
+            value={formData.carryOnWeight}
+          />
+        )}
         <input
           type='checkbox'
           id='addtrip--form--hold--checkbox'
@@ -82,13 +72,15 @@ export default function AddTripForm() {
           checked={formData.holdCheckBox}
         />
         <label htmlFor='carryOnCheckBox'>Hold luggage</label>
-        {formData.holdCheckBox && <input
-          type='number'
-          id='addtrip--form--hold--weight'
-          name='holdWeight'
-          onChange={handleChange}
-          value={formData.holdWeight}
-        />}
+        {formData.holdCheckBox && (
+          <input
+            type='number'
+            id='addtrip--form--hold--weight'
+            name='holdWeight'
+            onChange={handleChange}
+            value={formData.holdWeight}
+          />
+        )}
         <input
           className='button-turquoise button-turquoise--main'
           type='submit'
