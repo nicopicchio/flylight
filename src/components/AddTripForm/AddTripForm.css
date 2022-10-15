@@ -1,14 +1,42 @@
+.addtripform {
+    max-width: 568px;
+}
+
+.addtripform--subtitle {
+    margin-top: 10px;
+}
+
+
 .addtripform, .addtripform--form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 
 .addtripform--form input, .addtripform--form select {
-    min-width: 200px;
+    width: 269px;
+    height: 40px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+input, select {
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.addtripform--form--checkbox {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#addtrip--form--hold--checkbox, #addtrip--form--carryon--checkbox {
+    height: 20px;
+    width: 20px;
 }
 
 
