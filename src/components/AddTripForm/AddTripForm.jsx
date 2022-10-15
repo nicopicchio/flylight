@@ -5,7 +5,13 @@ import "./AddTripForm.css";
 export default function AddTripForm({ formData, setFormData }) {
   const navigate = useNavigate();
   const handleSubmit = (event) => {
+    console.log(formData);
     event.preventDefault();
+    // fetch(
+    //   `https://partner-test.api.chooose.today/v1/footprint/flights/route/${formData.departure}/${formData.destination}`
+    // )
+    //   .then((res) => res.json())
+    //   .then((co2FootprintData) => console.log(co2FootprintData));
     navigate("../set-goals");
   };
 
@@ -24,6 +30,13 @@ export default function AddTripForm({ formData, setFormData }) {
       <h2 className='addtripform--title'>Add Trip</h2>
       <h3 className='addtripform--subtitle'>Enter Flight Details</h3>
       <form className='addtripform--form' onSubmit={handleSubmit}>
+        <input
+          type='text'
+          id='addtrip--form--departure'
+          name='departure'
+          onChange={handleChange}
+          placeholder='Departure Airport..'
+        />
         <input
           type='text'
           id='addtrip--form--destination'

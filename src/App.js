@@ -10,6 +10,7 @@ import Trips from "./pages/Trips/Trips";
 
 function App() {
   const initialFormData = {
+    departure: "",
     destination: "",
     date: "",
     class: "",
