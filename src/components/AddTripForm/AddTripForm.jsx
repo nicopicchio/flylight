@@ -5,13 +5,20 @@ import "./AddTripForm.css";
 export default function AddTripForm({ formData, setFormData }) {
   const navigate = useNavigate();
   const handleSubmit = (event) => {
-    console.log(formData);
     event.preventDefault();
+
+    /*  --- CAN'T FETCH DUE TO CORS POLICY --- */
     // fetch(
-    //   `https://partner-test.api.chooose.today/v1/footprint/flights/route/${formData.departure}/${formData.destination}`
+    //   `https://partner-test.api.chooose.today/v1/footprint/flights/route/${formData.departure}/${formData.destination}`,
+    //   {
+    //     method: "GET",
+    //     redirect: "follow",
+    //   }
     // )
     //   .then((res) => res.json())
-    //   .then((co2FootprintData) => console.log(co2FootprintData));
+    //   .then((co2FootprintData) => console.log(co2FootprintData))
+    //   .catch((error) => console.log("error", error));
+
     navigate("../set-goals");
   };
 
