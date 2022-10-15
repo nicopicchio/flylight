@@ -79,7 +79,7 @@ export default function AddTripForm() {
           id='addtrip--form--hold--checkbox'
           name='holdCheckBox'
           onChange={handleChange}
-          value={formData.holdCheckBox}
+          checked={formData.holdCheckBox}
         />
         <label htmlFor='carryOnCheckBox'>Hold luggage</label>
         {formData.holdCheckBox && <input
