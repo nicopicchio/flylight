@@ -7,3 +7,9 @@
 }
 
 
+.addtripform--form input, .addtripform--form select {
+    min-width: 200px;
+}
+
+
+

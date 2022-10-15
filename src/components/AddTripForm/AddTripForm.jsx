@@ -1,78 +1,99 @@
-import React from "react";
-import './AddTripForm.css'
+import React from 'react';
+import './AddTripForm.css';
 
 export default function AddTripForm() {
-
-  
-
   const initialFormData = {
-    destination: "",
-    date: "",
-    class: "",
+    destination: '',
+    date: '',
+    class: '',
     carryOnCheckBox: true,
     carryOnWeight: '',
     holdCheckBox: true,
-    holdWeight: ''
+    holdWeight: '',
   };
 
-  const [formData, setFormData] = React.useState(initialFormData)
+  const [formData, setFormData] = React.useState(initialFormData);
 
-  console.log('formData:', formData)
+  console.log('formData:', formData);
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('submitted...')
-    return
+    console.log('submitted...');
+    return;
   };
 
-  const handleChange = (event) => {
-    event.preventDefault();
-    const { value, name } = event.target;
-    setFormData({
-      ...formData,
-      [name]: value,
+  function handleChange(event) {
+    const { name, value, type, checked } = event.target;
+    setFormData((prevFormData) => {
+      return {
+        ...prevFormData,
+        [name]: type === "checkbox" ? checked : value,
+      };
     });
-  };
-
+  }
 
   return (
-    <div className="addtripform">
-      <h1 className="addtripform--title">Add Trip</h1>
-      <h3 className="addtripform--subtitle">Enter Flight Details</h3>
-      <form className="addtripform--form" onSubmit={handleSubmit}>
-        <input type="text" id="addtrip--form--destination" name="destination" onChange={handleChange}/>
-        <input type="date" id="addtrip--form--date" name="date" onChange={handleChange}/>
-        <select className="addtrip--form--dropdown" name="class" onChange={handleChange}>
-          <option value="Economy">Economy</option>
-          <option value="Business">Business</option>
-          <option value="First">First</option>
+    <div className='addtripform'>
+      <h2 className='addtripform--title'>Add Trip</h2>
+      <h3 className='addtripform--subtitle'>Enter Flight Details</h3>
+      <form className='addtripform--form' onSubmit={handleSubmit}>
+        <input
+          type='text'
+          id='addtrip--form--destination'
+          name='destination'
+          onChange={handleChange}
+          placeholder="Destination Airport.."
+        />
+        <input
+          type='date'
+          id='addtrip--form--date'
+          name='date'
+          onChange={handleChange}
+        />
+        <select
+          className='addtrip--form--dropdown'
+          name='class'
+          onChange={handleChange}
+          value={formData.class}
+        >
+          <option value='Economy'>Economy</option>
+          <option value='Business'>Business</option>
+          <option value='First'>First</option>
         </select>
         <input
-          type="checkbox"
-          id="addtrip--form--carryon--checkbox"
-          name="carryOnCheckBox"
+          type='checkbox'
+          id='addtrip--form--carryon--checkbox'
+          name='carryOnCheckBox'
           onChange={handleChange}
+          checked={formData.carryOnCheckBox}
         />
-        <label htmlFor="carryOnCheckBox">Carry-on luggage</label>
+        <label htmlFor='carryOnCheckBox'>Carry-on luggage</label>
+        {formData.carryOnCheckBox && <input
+          type='number'
+          id='addtrip--form--carryon--weight'
+          name='carryOnWeight'
+          onChange={handleChange}
+          value={formData.carryOnWeight}
+        />}
         <input
-          type="number"
-          id="addtrip--form--carryon--weight"
-          name="carryOnWeight"
+          type='checkbox'
+          id='addtrip--form--hold--checkbox'
+          name='holdCheckBox'
           onChange={handleChange}
+          value={formData.holdCheckBox}
         />
+        <label htmlFor='carryOnCheckBox'>Hold luggage</label>
+        {formData.holdCheckBox && <input
+          type='number'
+          id='addtrip--form--hold--weight'
+          name='holdWeight'
+          onChange={handleChange}
+          value={formData.holdWeight}
+        />}
         <input
-          type="checkbox"
-          id="addtrip--form--hold--checkbox"
-          name="holdCheckBox"
-          onChange={handleChange}
+          className='button-turquoise button-turquoise--main'
+          type='submit'
+          value='Next'
         />
-        <label htmlFor="carryOnCheckBox">Hold luggage</label>
-        <input
-          type="number"
-          id="addtrip--form--hold--weight"
-          name="holdWeight"
-          onChange={handleChange}
-        />
-      <input className='addtripform--form--submit' type='submit' value='Next'/>
       </form>
     </div>
   );
