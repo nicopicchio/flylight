@@ -6,6 +6,7 @@ import Header from "./components/Header/Header";
 import AddTripForm from "./components/AddTripForm/AddTripForm";
 import SetGoals from "./pages/SetGoals/SetGoals";
 import Trips from "./pages/Trips/Trips";
+import MyTrip from "./pages/MyTrip/MyTrip";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           }
         />
         <Route path='/my-trips-summary' element={<Trips />} />
+        <Route path='/my-trip' element={<MyTrip />} />
         <Route path='/set-goals' element={<SetGoals />} />
       </Routes>
     </div>
