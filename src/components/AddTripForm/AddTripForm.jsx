@@ -1,25 +1,25 @@
-import React from 'react';
-import './AddTripForm.css';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "./AddTripForm.css";
 
-export default function AddTripForm() {
-  const initialFormData = {
-    destination: '',
-    date: '',
-    class: '',
-    carryOnCheckBox: false,
-    carryOnWeight: '',
-    holdCheckBox: false,
-    holdWeight: '',
-  };
-
-  const [formData, setFormData] = React.useState(initialFormData);
-
-  console.log('formData:', formData);
-
+export default function AddTripForm({ formData, setFormData }) {
+  const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('submitted...');
-    return;
+
+    /*  --- CAN'T FETCH DUE TO CORS POLICY --- */
+    // fetch(
+    //   `https://partner-test.api.chooose.today/v1/footprint/flights/route/${formData.departure}/${formData.destination}`,
+    //   {
+    //     method: "GET",
+    //     redirect: "follow",
+    //   }
+    // )
+    //   .then((res) => res.json())
+    //   .then((co2FootprintData) => console.log(co2FootprintData))
+    //   .catch((error) => console.log("error", error));
+
+    navigate("../set-goals");
   };
 
   function handleChange(event) {
@@ -27,7 +27,7 @@ export default function AddTripForm() {
     setFormData((prevFormData) => {
       return {
         ...prevFormData,
-        [name]: type === 'checkbox' ? checked : value,
+        [name]: type === "checkbox" ? checked : value,
       };
     });
   }
@@ -37,6 +37,13 @@ export default function AddTripForm() {
       <h2 className='addtripform--title'>Add Trip</h2>
       <h4 className='addtripform--subtitle'>Enter Flight Details</h4>
       <form className='addtripform--form' onSubmit={handleSubmit}>
+        <input
+          type='text'
+          id='addtrip--form--departure'
+          name='departure'
+          onChange={handleChange}
+          placeholder='Departure Airport..'
+        />
         <input
           type='text'
           id='addtrip--form--destination'
@@ -60,15 +67,15 @@ export default function AddTripForm() {
           <option value='Business'>Business</option>
           <option value='First'>First</option>
         </select>
-        <div className="addtripform--form--checkbox">
-        <input
-          type='checkbox'
-          id='addtrip--form--carryon--checkbox'
-          name='carryOnCheckBox'
-          onChange={handleChange}
-          checked={formData.carryOnCheckBox}
-        />
-        <label htmlFor='carryOnCheckBox'>Carry-on luggage</label>
+        <div className='addtripform--form--checkbox'>
+          <input
+            type='checkbox'
+            id='addtrip--form--carryon--checkbox'
+            name='carryOnCheckBox'
+            onChange={handleChange}
+            checked={formData.carryOnCheckBox}
+          />
+          <label htmlFor='carryOnCheckBox'>Carry-on luggage</label>
         </div>
         {formData.carryOnCheckBox && (
           <input
@@ -80,15 +87,15 @@ export default function AddTripForm() {
             placeholder='Weight in Kg..'
           />
         )}
-        <div className="addtripform--form--checkbox">
-        <input
-          type='checkbox'
-          id='addtrip--form--hold--checkbox'
-          name='holdCheckBox'
-          onChange={handleChange}
-          checked={formData.holdCheckBox}
-        />
-        <label htmlFor='carryOnCheckBox'>Hold luggage</label>
+        <div className='addtripform--form--checkbox'>
+          <input
+            type='checkbox'
+            id='addtrip--form--hold--checkbox'
+            name='holdCheckBox'
+            onChange={handleChange}
+            checked={formData.holdCheckBox}
+          />
+          <label htmlFor='carryOnCheckBox'>Hold luggage</label>
         </div>
         {formData.holdCheckBox && (
           <input
@@ -100,7 +107,7 @@ export default function AddTripForm() {
             placeholder='Weight in Kg..'
           />
         )}
-        
+
         <button
           className='button-turquoise button-turquoise--main'
           type='submit'
