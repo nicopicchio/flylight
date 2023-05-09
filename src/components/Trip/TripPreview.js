@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export default function TripPreview(props) {
   return (
-    <Link to="/my-trip" className="trip__link">
+    <Link to={`/trips/${props.tripObject.id}`} className="trip__link">
     {/* Ensure it links to the correct trip that is showing */}
 
         <div className="trip-preview__goal-chart">
