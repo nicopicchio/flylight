@@ -3,7 +3,7 @@ import './TripPreview.css';
 import GoalChart from '../GoalChart/GoalChart';
 import { Link } from 'react-router-dom';
 
-export default function TripPreview() {
+export default function TripPreview(props) {
   return (
     <Link to="/my-trip" className="trip__link">
     {/* Ensure it links to the correct trip that is showing */}
@@ -15,10 +15,10 @@ export default function TripPreview() {
 
         <div className="trip-preview">
             <div className="trip-preview__trip-info">
-                <p className="trip-preview__trip-info__airport-codes">LGW - AMS</p>
-                <p className="trip-preview__trip-info__date">26 Nov. 2022</p>
+                <p className="trip-preview__trip-info__airport-codes">{props.tripObject.from} - {props.tripObject.to}</p>
+                <p className="trip-preview__trip-info__date">{props.tripObject.date}</p>
             </div>
-            <p className="trip-preview__status">Pending</p>
+            <p className="trip-preview__status">{props.tripObject.verified ? 'Verified' : 'Pending'}</p>
         </div>
         
     </Link>
