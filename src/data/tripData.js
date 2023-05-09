@@ -1,5 +1,6 @@
 export const trips = [
     {
+        id: 1,
         from: 'LGW',
         to: 'NCE',
         date: '26 Jun. 2023',
@@ -11,6 +12,7 @@ export const trips = [
         verified: false
     },
     {
+        id: 2,
         from: 'BCN',
         to: 'CDG',
         date: '14 Aug. 2023',
@@ -22,6 +24,7 @@ export const trips = [
         verified: false
     },
     {
+        id: 3,
         from: 'MUC',
         to: 'FCO',
         date: '27 May 2023',
@@ -33,6 +36,7 @@ export const trips = [
         verified: false
     },
     {
+        id: 4,
         from: 'LGW',
         to: 'AMS',
         date: '11 Aug. 2022',
@@ -42,9 +46,9 @@ export const trips = [
         holdLuggageGoal: 18,
         carbonFootPrint: 80,
         verified: true
-    }
-    ,
+    },
     {
+        id: 5,
         from: 'ARN',
         to: 'OSL',
         date: '2 Mar. 2022',
