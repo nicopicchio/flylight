@@ -40,7 +40,7 @@ function App() {
         />
         <Route path='/my-trips-summary' element={<Trips />} />
         <Route path='/set-goals' element={<SetGoals formData={formData} />} />
-        <Route path='/my-trip' element={<MyTrip />} />
+        <Route path='/trips/:id' element={<MyTrip />} />
         <Route path='/my-rewards' element={<MyRewards />} />
       </Routes>
     </div>
