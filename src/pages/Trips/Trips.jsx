@@ -5,9 +5,7 @@ import Header from '../../components/Header/Header';
 import TripPreview from '../../components/Trip/TripPreview';
 import {ReactComponent as PlusIcon} from '../../assets/Plus_icon.svg';
 import { ReactComponent as Arrow } from '../../assets/Arrow.svg';
-
-// trip items, change to dynamic later
-const trips = [1, 2, 3, 4, 5]
+import {trips} from '../../data/tripData';
 
 export default function Trips() {
   return (
@@ -30,7 +28,9 @@ export default function Trips() {
           </div>
           )}
 
-          {trips.map((trip) => <TripPreview key={trip} />)}
+          {trips.map((trip, index) => 
+            <TripPreview key={index} tripObject={trip} />
+          )}
         </div>
       </div>
   )

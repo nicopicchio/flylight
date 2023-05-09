@@ -6,6 +6,7 @@ import Weather from '../../components/Weather/Weather';
 import TripPreview from '../../components/Trip/TripPreview';
 import RewardLevel from '../../components/RewardLevel/RewardLevel';
 import {ReactComponent as PlusIcon} from '../../assets/Plus_icon.svg';
+import {trips} from '../../data/tripData';
 
 export default function Home() {
   return (
@@ -33,9 +34,9 @@ export default function Home() {
           </div>
         </div>
         <div className="home__my-trips__items">
-          {/* trip items, change to dynamic */}
-          <TripPreview />
-          <TripPreview />
+          {trips.slice(0, 2).map((trip, index) => 
+            <TripPreview key={index} tripObject={trip} />
+          )}
         </div>
       </div>
 
