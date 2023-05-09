@@ -5,10 +5,11 @@ export const trips = [
         to: 'NCE',
         date: '26 Jun. 2023',
         class: 'economy',
+        flightNumber: 'BA 2764',
         holdLuggage: true,
         holdLuggageWeightAllowance: 23,
         holdLuggageGoal: 15,
-        carbonFootPrint: 110,
+        carbonFootprint: 110,
         verified: false
     },
     {
@@ -17,10 +18,11 @@ export const trips = [
         to: 'CDG',
         date: '14 Aug. 2023',
         class: 'first',
+        flightNumber: 'BA 2764',
         holdLuggage: true,
         holdLuggageWeightAllowance: 30,
         holdLuggageGoal: 22,
-        carbonFootPrint: 210,
+        carbonFootprint: 210,
         verified: false
     },
     {
@@ -29,10 +31,11 @@ export const trips = [
         to: 'FCO',
         date: '27 May 2023',
         class: 'business',
+        flightNumber: 'BA 2764',
         holdLuggage: true,
         holdLuggageWeightAllowance: 21,
         holdLuggageGoal: 12,
-        carbonFootPrint: 190,
+        carbonFootprint: 190,
         verified: false
     },
     {
@@ -41,10 +44,11 @@ export const trips = [
         to: 'AMS',
         date: '11 Aug. 2022',
         class: 'economy',
+        flightNumber: 'BA 2764',
         holdLuggage: true,
         holdLuggageWeightAllowance: 23,
         holdLuggageGoal: 18,
-        carbonFootPrint: 80,
+        carbonFootprint: 80,
         verified: true
     },
     {
@@ -53,10 +57,11 @@ export const trips = [
         to: 'OSL',
         date: '2 Mar. 2022',
         class: 'economy',
+        flightNumber: 'BA 2764',
         holdLuggage: true,
         holdLuggageWeightAllowance: 23,
         holdLuggageGoal: 8,
-        carbonFootPrint: 95,
+        carbonFootprint: 95,
         verified: true
     }
 ]
