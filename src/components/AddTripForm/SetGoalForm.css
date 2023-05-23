@@ -2,6 +2,8 @@
   width: 90%;
   display: grid;
   justify-items: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .slider-input_container {
@@ -24,6 +26,7 @@ input[type="range"] {
   background-color: #d9d9d9;
   cursor: pointer;
   overflow: hidden;
+  padding: 0;
 }
 
 .luggage-goal-weight_container {
