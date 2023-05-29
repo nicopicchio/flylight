@@ -26,7 +26,7 @@ const validateUser = (req, res, next) => {
         return res.status(400).send();
     }
     if (!toCreateUser.points) {
-        req.body.employee.points = 0;
+        req.body.user.points = 0;
     }
     next();
 };
