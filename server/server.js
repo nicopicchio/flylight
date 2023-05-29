@@ -10,6 +10,9 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(errorhandler());
 
+const apiRouter = require('./api/api');
+app.use('/api', apiRouter);
+
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
 });
