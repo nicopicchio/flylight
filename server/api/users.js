@@ -15,7 +15,7 @@ usersRouter.param('userId', (req, res, next, id) => {
             req.user = user;
             next();
         } else {
-            res.status(404).send();
+            res.status(404).send("User not found");
         }
     });
 });
@@ -48,7 +48,6 @@ usersRouter.get('/', (req, res, next) => {
 usersRouter.get('/:userId', (req, res, next) => {
     res.status(200).send({user: req.user});
 });
-
 
 /*
 Post -> Create operations:
