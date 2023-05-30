@@ -5,9 +5,9 @@ const db = new sqlite3.Database(process.env.TEST_DATABASE || './database/databas
 const tripsRouter = express.Router({mergeParams: true});
 module.exports = tripsRouter;
 
-tripsRouter.param('tripsId', (req, res, next, id) => {
-    db.get('SELECT * FROM Trip WHERE id = $id AND user_id = $userId', {
-        $id: id,
+tripsRouter.param('tripId', (req, res, next, id) => {
+    db.get('SELECT * FROM Trip WHERE id = $tripId AND user_id = $userId', {
+        $tripId: id,
         $userId: req.user.id
     }, (err, trip) => {
         if (err) {
@@ -64,7 +64,7 @@ tripsRouter.get('/', (req, res, next) => {
     });
 });
 
-tripsRouter.get('/:tripsId', (req, res, next) => {
+tripsRouter.get('/:tripId', (req, res, next) => {
     res.status(200).send({trip: req.trip});
 });
 
@@ -107,7 +107,7 @@ tripsRouter.post('/', validateTrip, (req, res, next) => {
 Put -> Update operations:
 */
 
-tripsRouter.put('/:tripsId', (req, res, next) => {
+tripsRouter.put('/:tripId', (req, res, next) => {
     const newTrip = req.body.trip;    
     db.run('UPDATE Trip SET departure_airport_code = $departureAirportCode, destination_airport_code = $destinationAirportCode, date = $date, class = $class, flight_number = $flightNumber, hold_luggage = $holdLuggage, hold_luggage_weight_allowance = $holdLuggageWeightAllowance, hold_luggage_goal = $holdLuggageGoal, carbon_footprint = $carbonFootprint, verified = $verified, points_earned = $pointsEarned WHERE id = $id', {
         $id: req.trip.id,
@@ -143,7 +143,7 @@ tripsRouter.put('/:tripsId', (req, res, next) => {
 Delete -> Delete operations:
 */
 
-tripsRouter.delete('/:tripsId', (req, res, next) => {
+tripsRouter.delete('/:tripId', (req, res, next) => {
     db.run('DELETE FROM Trip WHERE id = $id', {
         $id: req.trip.id,
     }, (err) => {
