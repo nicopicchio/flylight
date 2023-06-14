@@ -1,6 +1,6 @@
 import React from 'react';
 import './RewardLevel.css';
-import SilverBadge from '../../assets/Silver_status.png';
+import SilverBadge from '../../../assets/Silver_status.png';
 
 export default function RewardLevel() {
   return (

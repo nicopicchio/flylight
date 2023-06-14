@@ -6,7 +6,7 @@ import Header from '../../components/Header/Header';
 import useMultiStepForm from './useMultiStepForm';
 import AddTripForm from "../../components/AddTripForm/AddTripForm";
 import SetGoalForm from "../../components/AddTripForm/SetGoalForm";
-import {trips} from '../../data/tripData';
+import {trips} from '../../../data/tripData';
 
 const INITIAL_DATA = {
     from: '',

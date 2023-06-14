@@ -1,6 +1,6 @@
 import React from 'react';
 import '../Header/Header.css'
-import backIcon from '../../assets/Back-icon.svg'
+import backIcon from '../../../assets/Back-icon.svg'
 import CustomSwitch from '../CustomSwitch';
 import { useNavigate  } from 'react-router-dom'
 

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import RewardLevel from "../../components/RewardLevel/RewardLevel";
 import RewardHistoryItem from "../../components/RewardHistoryItem/RewardHistoryItem";
-import formatDate from "../../utils/formatDate";
+import formatDate from "../../../utils/formatDate";
 import "./MyRewards.css";
 
 // Hardcoded data, for development

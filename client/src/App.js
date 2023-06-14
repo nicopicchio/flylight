@@ -1,11 +1,11 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import StartScreen from "./pages/StartScreen/StartScreen";
-import Home from "./pages/Home/Home";
-import MyRewards from "./pages/MyRewards/MyRewards";
-import Trips from "./pages/Trips/Trips";
-import MyTrip from "./pages/MyTrip/MyTrip";
-import AddTrip from "./pages/AddTrip/AddTrip";
+import StartScreen from "./views/pages/StartScreen/StartScreen";
+import Home from "./views/pages/Home/Home";
+import MyRewards from "./views/pages/MyRewards/MyRewards";
+import Trips from "./views/pages/Trips/Trips";
+import MyTrip from "./views/pages/MyTrip/MyTrip";
+import AddTrip from "./views/pages/AddTrip/AddTrip";
 
 function App() {
   return (

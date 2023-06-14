@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './TripPreview.css';
 import './TripFull.css';
-import {ReactComponent as PencilIcon} from '../../assets/Pencil_icon.svg';
+import {ReactComponent as PencilIcon} from '../../../assets/Pencil_icon.svg';
 
 export default function TripFull(props) {
   return (

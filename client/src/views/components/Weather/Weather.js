@@ -1,6 +1,6 @@
 import React from 'react';
 import './Weather.css';
-import {ReactComponent as WeatherImg} from '../../assets/Weather_img.svg';
+import {ReactComponent as WeatherImg} from '../../../assets/Weather_img.svg';
 
 /* Data is hard coded now but should be changed later */
 

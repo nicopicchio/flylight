@@ -2,7 +2,7 @@ import React from 'react';
 import './MyTrip.css';
 import Header from '../../components/Header/Header';
 import TripFull from '../../components/Trip/TripFull';
-import {trips} from '../../data/tripData';
+import {trips} from '../../../data/tripData';
 import { useParams } from "react-router-dom";
 
 export default function MyTrip() {

@@ -1,6 +1,6 @@
 import React from 'react';
 import './StartScreen.css';
-import logo from '../../assets/Logo.png';
+import logo from '../../../assets/Logo.png';
 import { Link } from 'react-router-dom';
 
 export default function StartScreen() {

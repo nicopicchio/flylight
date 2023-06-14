@@ -1,3 +1,7 @@
+/**
+ * A presentational component
+ */
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
@@ -5,10 +9,14 @@ import Header from '../../components/Header/Header';
 import Weather from '../../components/Weather/Weather';
 import TripPreview from '../../components/Trip/TripPreview';
 import RewardLevel from '../../components/RewardLevel/RewardLevel';
-import {ReactComponent as PlusIcon} from '../../assets/Plus_icon.svg';
-import {trips} from '../../data/tripData';
+import {ReactComponent as PlusIcon} from '../../../assets/Plus_icon.svg';
+import { ReactComponent as Arrow } from '../../../assets/Arrow.svg';
+
+import useTrips from "../../../hooks/useTrips";
 
 export default function Home() {
+  const { isLoading, trips, error } = useTrips();
+
   return (
     <div className="home">
       <Header />
@@ -34,8 +42,20 @@ export default function Home() {
           </div>
         </div>
         <div className="home__my-trips__items">
-          {trips.slice(0, 2).map((trip, index) => 
-            <TripPreview key={index} tripObject={trip} />
+          {isLoading ? (
+            <span>Loading...</span>
+          ) : trips && trips.length > 0  ? (
+            trips.slice(0, 2).map((trip, index) => 
+              <TripPreview key={index} tripObject={trip} />
+            )
+          ) : (
+            <div className="my-trips__items__empty">
+              <p>You don't have any trips yet, <br/>
+              click here to add a new trip!</p>
+              <div className="my-trips__items__empty__arrow-container">
+                <Arrow />
+              </div>
+            </div>
           )}
         </div>
       </div>

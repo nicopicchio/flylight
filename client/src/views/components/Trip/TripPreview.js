@@ -15,7 +15,7 @@ export default function TripPreview(props) {
 
         <div className="trip-preview">
             <div className="trip-preview__trip-info">
-                <p className="trip-preview__trip-info__airport-codes">{props.tripObject.from} - {props.tripObject.to}</p>
+                <p className="trip-preview__trip-info__airport-codes">{props.tripObject.departure_airport_code} - {props.tripObject.destination_airport_code}</p>
                 <p className="trip-preview__trip-info__date">{props.tripObject.date}</p>
             </div>
             <p className="trip-preview__status">{props.tripObject.verified ? 'Verified' : 'Pending'}</p>
