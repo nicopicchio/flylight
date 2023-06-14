@@ -2,7 +2,14 @@ import React from 'react';
 import './RewardLevel.css';
 import SilverBadge from '../../../assets/Silver_status.png';
 
-export default function RewardLevel() {
+export default function RewardLevel(props) {
+
+  const user = props.user;
+
+  /*
+  Calculate reward level etc
+  */
+
   return (
     <div className="reward-level">
         <div className="reward-level__badge">
@@ -13,7 +20,7 @@ export default function RewardLevel() {
                 <p className="reward-level__text__title">Silver <span className="reward-level__text__small">(Level 2)</span></p>
                 <p className="reward-level__text__next-level">1090 points to Gold</p>
             </div>
-            <p className="reward-level__text__points">2,010 <span className="reward-level__text__small">points</span></p>
+            <p className="reward-level__text__points">{user.points} <span className="reward-level__text__small">points</span></p>
         </div>
     </div>
   )

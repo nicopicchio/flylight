@@ -1,7 +1,3 @@
-/**
- * A presentational component
- */
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
@@ -12,10 +8,10 @@ import RewardLevel from '../../components/RewardLevel/RewardLevel';
 import {ReactComponent as PlusIcon} from '../../../assets/Plus_icon.svg';
 import { ReactComponent as Arrow } from '../../../assets/Arrow.svg';
 
-import useTrips from "../../../hooks/useTrips";
+import useUserTrips from "../../../hooks/useUserTrips";
 
-export default function Home() {
-  const { isLoading, trips, error } = useTrips();
+export default function Home({ user }) {
+  const { tripsIsLoading, trips, tripsError } = useUserTrips(user);
 
   return (
     <div className="home">
@@ -42,7 +38,7 @@ export default function Home() {
           </div>
         </div>
         <div className="home__my-trips__items">
-          {isLoading ? (
+          {tripsIsLoading ? (
             <span>Loading...</span>
           ) : trips && trips.length > 0  ? (
             trips.slice(0, 2).map((trip, index) => 
@@ -66,8 +62,9 @@ export default function Home() {
           <Link to="/my-rewards" className="home__my-rewards__button--see-all button-turquoise button-turquoise--small">See all</Link>
         </div>
         <div className="home__my-rewards__items">
-          {/* reward level item, change to dynamic */}
-          <RewardLevel />
+          {user && (
+            <RewardLevel user={user} />
+          )}          
         </div>
       </div>
     </div>

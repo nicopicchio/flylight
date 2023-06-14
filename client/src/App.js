@@ -7,17 +7,27 @@ import Trips from "./views/pages/Trips/Trips";
 import MyTrip from "./views/pages/MyTrip/MyTrip";
 import AddTrip from "./views/pages/AddTrip/AddTrip";
 
+import useUser from "./hooks/useUser";
+
 function App() {
+  const { userIsLoading, user, userError } = useUser();
+
   return (
     <div className='App'>
-      <Routes>
-        <Route path='/' element={<StartScreen />} />
-        <Route path='/home' element={<Home />} />
-        <Route path='/add-trip'element={<AddTrip />} />
-        <Route path='/my-trips-summary' element={<Trips />} />
-        <Route path='/trips/:id' element={<MyTrip />} />
-        <Route path='/my-rewards' element={<MyRewards />} />
-      </Routes>
+      {userIsLoading ? (
+        <span>Loading...</span>
+      ) : user ? (
+        <Routes>
+          <Route path='/' element={<StartScreen />} />
+          <Route path='/home' element={<Home user={user} />} />
+          <Route path='/add-trip'element={<AddTrip user={user} />} />
+          <Route path='/my-trips-summary' element={<Trips user={user} />} />
+          <Route path='/trips/:id' element={<MyTrip user={user} />} />
+          <Route path='/my-rewards' element={<MyRewards user={user} />} />
+        </Routes>
+      ) : (
+        <span>{JSON.stringify(userError)}</span>
+      )}
     </div>
   );
 }

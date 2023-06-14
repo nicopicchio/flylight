@@ -1,16 +1,16 @@
 /**
- * A container component (data and behaviour)
+ * A container component (data and behaviour) for Trips
  */
 
 import { useEffect, useState } from "react";
 
-export default function useTrips() {
-  const [trips, setTrips] = useState(null);
+export default function useUserTrips(user) {
+  const [userTrips, setUserTrips] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState();
 
   useEffect(() => {
-   fetch('http://localhost:3001/api/users/2/trips') // Now loading trips for user 2
+    fetch(`http://localhost:3001/api/users/${user.id}/trips`)
     .then(response => {
         if (response.ok) {
             return response.json()
@@ -18,7 +18,7 @@ export default function useTrips() {
         throw response;
     })
     .then(data => {
-        setTrips(data.trips);
+        setUserTrips(data.trips);
     })
     .catch(error => {
         console.error("Error fetching data: ", error);
@@ -30,8 +30,8 @@ export default function useTrips() {
   }, []);
 
   return {
-    isLoading,
-    trips,
-    error
+    tripsIsLoading: isLoading,
+    trips: userTrips,
+    tripsError: error
   };
 }

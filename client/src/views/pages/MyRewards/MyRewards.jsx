@@ -5,29 +5,13 @@ import RewardHistoryItem from "../../components/RewardHistoryItem/RewardHistoryI
 import formatDate from "../../../utils/formatDate";
 import "./MyRewards.css";
 
-// Hardcoded data, for development
-const hardCodedHistoryItems = [
-  {
-    title: "A tree planted",
-    description: "Saving the Amazon",
-    points: -100,
-    date: "11/08/2022",
-  },
-  {
-    title: "Achieved goal",
-    description: "LGW - AMS",
-    points: +63,
-    date: "11/08/2022",
-  },
-  {
-    title: "Achieved goal",
-    description: "ARN - OSL",
-    points: +17,
-    date: "02/03/2022",
-  },
-];
+import useRewards from "../../../hooks/useRewards";
+import useUserRewards from "../../../hooks/useUserRewards";
 
-export default function MyRewards() {
+export default function MyRewards({ user }) {
+  const { rewardsIsLoading, rewards, rewardsError } = useRewards();
+  const { userRewardsIsLoading, userRewards, userRewardsError } = useUserRewards(user);
+
   return (
     <>
       <Header />
@@ -43,20 +27,24 @@ export default function MyRewards() {
       </div>
 
       <>
-        <RewardLevel />
+        <RewardLevel user={user} />
       </>
 
       <div className="my-rewards__history">
         <h2 className="my-rewards__history__title">History</h2>
-
-        {hardCodedHistoryItems.map((item) => (
-          <RewardHistoryItem
-            title={item.title}
-            desc={item.description}
-            pointsDiff={item.points > 0 ? `+${item.points}` : item.points}
-            date={formatDate(item.date)}
-          />
-        ))}
+        {rewardsIsLoading || userRewardsIsLoading ? (
+          <span>Loading...</span>
+        ) : rewards && rewards.length > 0 && userRewards && userRewards.length > 0  ? (
+          userRewards.map((userReward, index) => (
+            <RewardHistoryItem
+              key={index}
+              rewardItem={rewards.find(obj => obj.id === userReward.reward_id)}
+              purchaseDate={formatDate(userReward.purchase_date)}
+            />
+          ))
+        ) : (
+          <span>You have no rewards</span>
+        )}
       </div>
     </>
   );

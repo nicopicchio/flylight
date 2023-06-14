@@ -1,7 +1,3 @@
-/**
- * A presentational component
- */
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Trips.css';
@@ -10,10 +6,10 @@ import TripPreview from '../../components/Trip/TripPreview';
 import {ReactComponent as PlusIcon} from '../../../assets/Plus_icon.svg';
 import { ReactComponent as Arrow } from '../../../assets/Arrow.svg';
 
-import useTrips from "../../../hooks/useTrips";
+import useTrips from "../../../hooks/useUserTrips";
 
-export default function Trips() {
-  const { isLoading, trips, error } = useTrips();
+export default function Trips({ user }) {
+  const { isLoading, trips, error } = useTrips(user);
 
   return (
     <div className="my-trips">
