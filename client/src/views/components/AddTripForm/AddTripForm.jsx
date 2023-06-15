@@ -12,7 +12,7 @@ return (
             id='addtrip--form--departure'
             name='from'
             onChange={updateFields}
-            placeholder='Departure Airport..'
+            placeholder='Departure airport'
         />
 
         <input
@@ -20,7 +20,15 @@ return (
             id='addtrip--form--destination'
             name='to'
             onChange={updateFields}
-            placeholder='DEST AIRPORT...'
+            placeholder='Destination airport'
+        />
+
+        <input
+            type='text'
+            id='addtrip--form--flightnumber'
+            name='flightNumber'
+            onChange={updateFields}
+            placeholder='Flight number'
         />
 
         <input

@@ -6,7 +6,8 @@ import Header from '../../components/Header/Header';
 import useMultiStepForm from './useMultiStepForm';
 import AddTripForm from "../../components/AddTripForm/AddTripForm";
 import SetGoalForm from "../../components/AddTripForm/SetGoalForm";
-import {trips} from '../../../data/tripData';
+
+import useUserTrips from "../../../hooks/useUserTrips";
 
 const INITIAL_DATA = {
     from: '',
@@ -15,20 +16,20 @@ const INITIAL_DATA = {
     flightClass: 'economy',
     flightNumber: '',
     holdLuggageCheckbox: false,
-    holdLuggageWeightAllowance: 0,
-    holdLuggageGoal: 0,
+    holdLuggageWeightAllowance: null,
+    holdLuggageGoal: null,
     carbonFootprint: 0
 }
 
-let nextId = 6;
-
-export default function Form() {
+export default function AddTrip({ user }) {
     const navigate = useNavigate();
-    const [data, setData] = useState(INITIAL_DATA);
+    const [tripData, setTripData] = useState(INITIAL_DATA);
+
+    const { addTrip } = useUserTrips(user);
 
     function updateFields(fields) {
         const { name, value, type, checked } = fields.target;
-        setData(prev => {
+        setTripData(prev => {
             return {
                 ...prev, 
                 ...fields, 
@@ -38,8 +39,8 @@ export default function Form() {
     }
 
     const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } = useMultiStepForm([
-        <AddTripForm {...data} updateFields={updateFields} />, 
-        <SetGoalForm {...data} updateFields={updateFields} />
+        <AddTripForm {...tripData} updateFields={updateFields} />, 
+        <SetGoalForm {...tripData} updateFields={updateFields} />
     ]);
 
     function onSubmit(e) {
@@ -66,22 +67,19 @@ export default function Form() {
             return next();
         }
 
-        alert("Succesful submit");
-        trips.push({
-            id: nextId++,
-            from: data.from,
-            to: data.to,
-            date: data.date,
-            class: data.flightClass,
-            flightNumber: data.flightNumber,
-            holdLuggage: data.holdLuggage,
-            holdLuggageWeightAllowance: data.holdLuggageWeightAllowance,
-            holdLuggageGoal: data.holdLuggageGoal,
-            carbonFootprint: data.carbonFootprint,
-            verified: false
+        /* Add new trip to database */
+
+        addTrip(tripData.from, tripData.to, tripData.date, tripData.flightClass, tripData.flightNumber, tripData.hasHoldLuggage, tripData.holdLuggageWeightAllowance, tripData.holdLuggageGoal, tripData.carbonFootprint)
+        .then((data) => {
+            if (data) {
+                console.log(JSON.stringify(data));
+                alert("Succesful submit");
+                navigate("/home");
+            } else {
+                console.log("Request error");
+            }
         });
-        console.log(trips);
-        navigate("/home");
+        
     }
 
 return (

@@ -10,7 +10,7 @@ export default function useUser() {
   const [error, setError] = useState();
 
   useEffect(() => {
-   fetch('http://localhost:3001/api/users/1') // Now loading user 1
+   fetch('http://localhost:3001/api/users/3') // Now loading user 3, change number to see different user
     .then(response => {
         if (response.ok) {
             return response.json()

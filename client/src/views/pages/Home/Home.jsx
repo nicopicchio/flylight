@@ -11,7 +11,7 @@ import { ReactComponent as Arrow } from '../../../assets/Arrow.svg';
 import useUserTrips from "../../../hooks/useUserTrips";
 
 export default function Home({ user }) {
-  const { tripsIsLoading, trips, tripsError } = useUserTrips(user);
+  const { trips, tripsIsLoading, tripsError } = useUserTrips(user);
 
   return (
     <div className="home">

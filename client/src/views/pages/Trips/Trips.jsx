@@ -9,7 +9,7 @@ import { ReactComponent as Arrow } from '../../../assets/Arrow.svg';
 import useTrips from "../../../hooks/useUserTrips";
 
 export default function Trips({ user }) {
-  const { isLoading, trips, error } = useTrips(user);
+  const { trips, isLoading, error } = useTrips(user);
 
   return (
     <div className="my-trips">

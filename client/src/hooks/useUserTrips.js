@@ -9,6 +9,9 @@ export default function useUserTrips(user) {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState();
 
+  /* 
+  Retrieve user's trips from the database 
+  */
   useEffect(() => {
     fetch(`http://localhost:3001/api/users/${user.id}/trips`)
     .then(response => {
@@ -29,9 +32,48 @@ export default function useUserTrips(user) {
     })
   }, []);
 
+  /* 
+  Add a new trip to the database 
+  */
+  async function addTrip(depAirport, destAirport, date, flightClass, flightNumber, hasHoldLuggage, holdLuggageWeightAllowance, holdLuggageGoal, carbonFootprint) {
+    const response = await fetch(`http://localhost:3001/api/users/${user.id}/trips`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+        body: JSON.stringify({
+          "trip": {
+                  "departure_airport_code": depAirport,
+                  "destination_airport_code": destAirport,
+                  "date": date,
+                  "class": flightClass,
+                  "flight_number": flightNumber,
+                  "hold_luggage": hasHoldLuggage ? 1 : 0,
+                  "hold_luggage_weight_allowance": holdLuggageWeightAllowance,
+                  "hold_luggage_goal": holdLuggageGoal,
+                  "carbon_footprint": carbonFootprint || 0,
+              }
+        })
+    })
+    .then(response => {
+        if (response.ok) {
+            return response;
+        }
+        throw new Error('Request failed!');
+    })
+    .catch(error => {
+        console.error("Error posting data: ", error);
+        setError(error);
+    })
+    .finally(() => {
+        setIsLoading(false);
+    })
+
+    return response.json();
+  };
+
   return {
-    tripsIsLoading: isLoading,
     trips: userTrips,
-    tripsError: error
+    tripsIsLoading: isLoading,
+    tripsError: error,
+    addTrip
   };
 }
