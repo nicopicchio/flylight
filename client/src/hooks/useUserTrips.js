@@ -30,7 +30,23 @@ export default function useUserTrips(user) {
     .finally(() => {
         setIsLoading(false);
     })
-  }, []);
+  }, [user.id]);
+
+  /* 
+  Get new trip from the database 
+  */
+ function getTrip(tripId) {
+
+    if (!isLoading) {
+    console.log("All user trips: " + JSON.stringify(userTrips));
+
+    }
+
+    // console.log("Trip ID: " + tripId);
+    // const currentTripObject = userTrips.filter(trip => trip.id === tripId);
+    // console.log("Trip: " + JSON.stringify(currentTripObject));
+    // return currentTripObject;
+ }
 
   /* 
   Add a new trip to the database 
@@ -70,10 +86,35 @@ export default function useUserTrips(user) {
     return response.json();
   };
 
+  /* 
+  Delete a trip from the database 
+  */
+  async function removeTrip(tripId) {
+    const response = await fetch(`http://localhost:3001/api/users/${user.id}/trips/${tripId}`, {
+        method: 'DELETE',
+    })
+    .then(response => {
+        if (response.ok) {
+            return response;
+        }
+        throw new Error('Request failed!');
+    })
+    .catch(error => {
+        console.error("Error deleting data: ", error);
+        setError(error);
+    })
+    .finally(() => {
+        setIsLoading(false);
+    })
+
+    return response.json();
+  };
+
   return {
     trips: userTrips,
     tripsIsLoading: isLoading,
     tripsError: error,
+    getTrip,
     addTrip
   };
 }
