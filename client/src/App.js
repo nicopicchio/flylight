@@ -5,6 +5,7 @@ import Home from "./views/pages/Home/Home";
 import MyRewards from "./views/pages/MyRewards/MyRewards";
 import Trips from "./views/pages/Trips/Trips";
 import MyTrip from "./views/pages/MyTrip/MyTrip";
+import EditMyTrip from "./views/pages/EditMyTrip/EditMyTrip";
 import AddTrip from "./views/pages/AddTrip/AddTrip";
 
 import useUser from "./hooks/useUser";
@@ -23,6 +24,7 @@ function App() {
           <Route path='/add-trip'element={<AddTrip user={user} />} />
           <Route path='/my-trips-summary' element={<Trips user={user} />} />
           <Route path='/trips/:id' element={<MyTrip user={user} />} />
+          <Route path='/edit-trip/:id' element={<EditMyTrip user={user} />} />
           <Route path='/my-rewards' element={<MyRewards user={user} />} />
         </Routes>
       ) : (
