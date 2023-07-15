@@ -59,13 +59,13 @@ tripsRouter.get('/', (req, res, next) => {
         if (err) {
             next(err);
         } else {
-            res.status(200).json({trips: trips});
+            res.status(200).json(trips);
         }
     });
 });
 
 tripsRouter.get('/:tripId', (req, res, next) => {
-    res.status(200).send({trip: req.trip});
+    res.status(200).send(req.trip);
 });
 
 
@@ -98,7 +98,7 @@ tripsRouter.post('/', validateTrip, (req, res, next) => {
             if (!trip) {
                 return res.status(500).send();
             }
-            res.status(201).send({trip: trip});
+            res.status(201).send(trip);
         });
     });
 });
@@ -134,7 +134,7 @@ tripsRouter.put('/:tripId', (req, res, next) => {
             } else if (!trip) {
                 return res.status(500).send();
             }
-            res.status(200).send({trip: trip});
+            res.status(200).send(trip);
         });
     });
 });
