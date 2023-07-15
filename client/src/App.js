@@ -1,37 +1,35 @@
-import "./App.css";
-import { Routes, Route } from "react-router-dom";
-import StartScreen from "./views/pages/StartScreen/StartScreen";
-import Home from "./views/pages/Home/Home";
-import MyRewards from "./views/pages/MyRewards/MyRewards";
-import Trips from "./views/pages/Trips/Trips";
-import MyTrip from "./views/pages/MyTrip/MyTrip";
-import EditMyTrip from "./views/pages/EditMyTrip/EditMyTrip";
-import AddTrip from "./views/pages/AddTrip/AddTrip";
-
-import useUser from "./hooks/useUser";
+import './App.css'
+import { Routes, Route } from 'react-router-dom'
+import { useUser } from './hooks/useUser'
+import Header from './views/components/Header'
+import Start from './views/pages/StartPage'
+import Home from './views/pages/HomePage'
+import TripsList from './views/components/TripsList'
+import TripPage from './views/pages/TripPage'
+import AddTripPage from './views/pages/AddTripPage'
+import EditTripPage from './views/pages/EditTripPage'
+import RewardsPage from './views/pages/RewardsPage'
 
 function App() {
-  const { userIsLoading, user, userError } = useUser();
+
+  const currentUserId = Number(useUser()?.id)
+  console.log("Current user: " + JSON.stringify(currentUserId))
 
   return (
     <div className='App'>
-      {userIsLoading ? (
-        <span>Loading...</span>
-      ) : user ? (
-        <Routes>
-          <Route path='/' element={<StartScreen />} />
-          <Route path='/home' element={<Home user={user} />} />
-          <Route path='/add-trip'element={<AddTrip user={user} />} />
-          <Route path='/my-trips-summary' element={<Trips user={user} />} />
-          <Route path='/trips/:id' element={<MyTrip user={user} />} />
-          <Route path='/edit-trip/:id' element={<EditMyTrip user={user} />} />
-          <Route path='/my-rewards' element={<MyRewards user={user} />} />
+        <Header />
+
+        <Routes>          
+          <Route path='/' element={<Start />} />
+          <Route path='/home' element={<Home userId={currentUserId} />} />
+          <Route path='/trips' element={<TripsList userId={currentUserId} />} />
+          <Route path='/trips/:id' element={<TripPage userId={currentUserId} />} />
+          <Route path='/add-trip'element={<AddTripPage userId={currentUserId} />} />
+          <Route path='/edit-trip/:id' element={<EditTripPage userId={currentUserId} />} />
+          <Route path='/rewards' element={<RewardsPage userId={currentUserId} />} />
         </Routes>
-      ) : (
-        <span>{JSON.stringify(userError)}</span>
-      )}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

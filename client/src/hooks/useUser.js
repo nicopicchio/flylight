@@ -1,37 +1,19 @@
-/**
- * A container component (data and behaviour) for User
- */
+import { makeRequest } from '../services/makeRequest'
 
-import { useEffect, useState } from "react";
+// get userId of logged-in user through request since cookies are not supported for cross-domain deployment (in case of deployment of client and server on a single domain, use cookies by removing this code and uncommenting the return statement in useUser that uses cookies)
+// const userId = await makeRequest("/users").then(userId => {
+//     return userId
+// }).catch(error => {
+//     console.log(error)
+//     return
+// })
 
-export default function useUser() {
-  const [user, setUser] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState();
+export function useUser() {
 
-  useEffect(() => {
-   fetch('http://localhost:3001/api/users/3') // Now loading user 3, change number to see different user
-    .then(response => {
-        if (response.ok) {
-            return response.json()
-        }
-        throw response;
-    })
-    .then(data => {
-        setUser(data.user);
-    })
-    .catch(error => {
-        console.error("Error fetching data: ", error);
-        setError(error);
-    })
-    .finally(() => {
-        setIsLoading(false);
-    })
-  }, []);
+    if (!document.cookie) {
+        console.log("No cookies")
+        return
+    }
 
-  return {
-    isLoading,
-    user,
-    error
-  };
+    return { id: document.cookie.match(/userId=(?<id>[^;]+);?$/).groups.id }
 }
