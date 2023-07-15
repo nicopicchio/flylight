@@ -38,13 +38,13 @@ rewardsRouter.get('/', (req, res, next) => {
         if (err) {
             next(err);
         } else {
-            res.status(200).json({rewards: rewards});
+            res.status(200).json(rewards);
         }
     });
 });
 
 rewardsRouter.get('/:rewardId', (req, res, next) => {
-    res.status(200).send({reward: req.reward});
+    res.status(200).send(req.reward);
 });
 
 /*
@@ -67,7 +67,7 @@ rewardsRouter.post('/', validateReward, (req, res, next) => {
             if (!reward) {
                 return res.status(500).send();
             }
-            res.status(201).send({reward: reward});
+            res.status(201).send(reward);
         });
     });
 });
@@ -95,7 +95,7 @@ rewardsRouter.put('/:rewardId', (req, res, next) => {
             } else if (!reward) {
                 return res.status(500).send();
             }
-            res.status(200).send({reward: reward});
+            res.status(200).send(reward);
         });
     });
 });
