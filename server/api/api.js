@@ -1,16 +1,21 @@
-const express = require('express');
-const app = require('../server');
+const express = require('express')
+const app = require('../server')
 
-const apiRouter = express.Router();
-module.exports = apiRouter;
+const apiRouter = express.Router()
+module.exports = apiRouter
 
-const usersRouter = require('./users');
-const tripsRouter = require('./trips');
-const purchasedRewardsRouter = require('./purchased_rewards');
-const rewardsRouter = require('./rewards');
+const onRequestHook = require('./activeUser')
+apiRouter.use(onRequestHook) // fake user login before each request
 
-apiRouter.use('/users', usersRouter);
-usersRouter.use('/:userId/trips', tripsRouter);
-usersRouter.use('/:userId/rewards', purchasedRewardsRouter); // rewards a user has purchased
-apiRouter.use('/rewards', rewardsRouter); // all available rewards
+const usersRouter = require('./users')
+apiRouter.use('/users', usersRouter)
+
+const tripsRouter = require('./trips')
+usersRouter.use('/:userId/trips', tripsRouter)
+
+const purchasedRewardsRouter = require('./purchased_rewards')
+usersRouter.use('/:userId/rewards', purchasedRewardsRouter) // rewards a user has purchased
+
+const rewardsRouter = require('./rewards')
+apiRouter.use('/rewards', rewardsRouter) // all available rewards
 
