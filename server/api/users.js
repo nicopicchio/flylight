@@ -40,13 +40,13 @@ usersRouter.get('/', (req, res, next) => {
         if (err) {
             next(err);
         } else {
-            res.status(200).json({users: users});
+            res.status(200).json(users);
         }
     });
 });
 
 usersRouter.get('/:userId', (req, res, next) => {
-    res.status(200).send({user: req.user});
+    res.status(200).send(req.user);
 });
 
 /*
@@ -68,7 +68,7 @@ usersRouter.post('/', validateUser, (req, res, next) => {
             if (!user) {
                 return res.status(500).send();
             }
-            res.status(201).send({user: user});
+            res.status(201).send(user);
         });
     });
 });
@@ -95,7 +95,7 @@ usersRouter.put('/:userId', (req, res, next) => {
             } else if (!user) {
                 return res.status(500).send();
             }
-            res.status(200).send({user: user});
+            res.status(200).send(user);
         });
     });
 });
