@@ -42,11 +42,11 @@ a {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
-
 
 body {
   margin: 0 auto;
@@ -108,4 +108,557 @@ h2 {
   border-radius: 20px;
   width: 28px;
   height: 28px;
+}
+
+/* ----- StartScreen ----- */
+
+.start-screen {
+  margin-top: 100px;
+}
+
+.start-screen__logo {
+  width: 100px;
+}
+
+.start-screen__title {
+  font-size: 45px;
+  font-weight: 700;
+  color: #A7A7A7;
+}
+
+.start-screen__description {
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 600;
+  max-width: 350px;
+  margin: 50px auto;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+@media screen and (min-width: 300px) {
+  .start-screen__title {
+    font-size: 64px;
+  }
+}
+
+/* ----- Home ----- */
+
+.home {
+  max-width: 568px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* Weather */
+
+.home__weather__items {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto 25px auto;
+}
+
+.home__weather__items .weather:first-child {
+  margin-left: 0;
+}
+
+.home__weather__items .weather:last-child {
+  margin-right: 0;
+}
+
+/* My Trips */
+
+.my-trip__title {
+  text-align: left;
+}
+
+.my-trip__item {
+  margin: 20px auto 0 auto;
+  text-align: left;
+}
+
+.home__my-trips__title,
+.home__my-trips__buttons {
+  display: inline-block;
+  /* fallback for flexbox */
+}
+
+.home__my-trips__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home__my-trips__items {
+  margin: 20px auto 25px auto;
+}
+
+.home__my-trips__items .trip:last-child {
+  margin-bottom: 0px;
+}
+
+/* My rewards */
+
+.home__my-rewards__title,
+.home__my-rewards__button--see-all {
+  display: inline-block;
+  /* fallback for flexbox */
+}
+
+.home__my-rewards__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home__my-rewards__items {
+  margin: 20px auto 0 auto;
+}
+
+/* Common for my trips and my rewards */
+
+.home__my-trips__button--see-all,
+.home__my-trips__button--add-trip,
+.home__my-rewards__button--see-all {
+  margin-left: 14px;
+}
+
+/* ----- Header ----- */
+
+.header-container {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.switch-container {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+.eco-mode {
+  font-weight: 600;
+  color: #929292;
+}
+
+.back-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Trip */
+
+.trip {
+  background-color: #F1F2F2;
+  border-radius: 10px;
+  width: 100%;
+  margin: 0 auto 18px auto;
+  padding: 16px 16px 11px 16px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.trip__text {
+  width: 100%;
+  margin-left: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.trip__text__trip-info__airport-codes {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.trip__text__trip-info__date {
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.trip__text__status {
+  color: #8A8A8A;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: right;
+}
+
+/* TripPreview */
+
+.trip__link {
+  /* display: inline-block; */
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  margin: 0 auto 18px auto;
+  padding: 16px 16px 11px 16px;
+  border-radius: 10px;
+  background-color: #F1F2F2;
+  color: #333333;
+}
+
+.trip-preview {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.trip-preview__goal-chart {
+  margin-right: 15px;
+}
+
+.trip-preview__trip-info__airport-codes {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.trip-preview__trip-info__date {
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.trip-preview__status {
+  color: #8A8A8A;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: right;
+}
+
+/* TripFull */
+
+.trip {
+  display: inline-block;
+  width: 100%;
+  margin: 0 auto 18px auto;
+  padding: 16px 25px;
+  border-radius: 10px;
+  background-color: #F1F2F2;
+}
+
+.trip-text {
+  margin: 0 auto 20px auto;
+}
+
+.trip__extra-details {
+  margin: 30px auto 0 auto;
+  font-size: 15px;
+}
+
+/* Extra details text styling */
+
+.trip__extra-details__flight-detail {
+  margin-bottom: 10px;
+}
+
+.trip__extra-details__flight-footprint {
+  font-weight: 600;
+}
+
+.trip__extra-details__luggage {
+  margin-top: 35px;
+}
+
+/* Edit trip button */
+
+.trip__button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.trip__button--edit-trip {
+  display: flex;
+  text-align: right;
+  align-self: flex-end;
+}
+
+.trip__button--edit-trip svg {
+  width: 75%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Trips */
+
+.my-trips__title,
+.my-trips__button--add-trip {
+  display: inline-block;
+  /* fallback for flexbox */
+}
+
+.my-trips__header {
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.my-trips__items {
+  margin: 20px auto 0 auto;
+  text-align: left;
+}
+
+.my-trips__items__empty {
+  display: flex;
+  justify-content: space-between;
+  color: #8A8A8A;
+}
+
+.my-trips__items__empty__arrow-container {
+  height: 64px;
+  width: 64px;
+  margin-right: 5px;
+}
+
+/* Weather */
+
+.weather {
+  color: white;
+  background-color: #00BBB0;
+  border-radius: 10px;
+  width: 100%;
+  margin: 0 5px;
+  padding: 8px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.weather__img {
+  width: 33px;
+  margin: 0 auto;
+}
+
+.weather__date {
+  font-size: 9px;
+  font-weight: 500;
+  margin: 0 auto 10px auto;
+}
+
+.weather__degrees {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 2px auto 0 auto;
+}
+
+/* Media queries */
+
+@media screen and (min-width: 500px) {
+  .weather {
+    padding: 12px;
+  }
+
+  .weather__img {
+    width: 56px;
+  }
+
+  .weather__date {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+
+  .weather__degrees {
+    font-size: 32px;
+    margin-top: 8px;
+  }
+}
+
+/* RewardStatus */
+
+.reward-level {
+  background-color: #F2F2F2;
+  border-radius: 10px;
+  width: 100%;
+  margin: 0 auto 18px auto;
+  padding: 16px 16px 11px 16px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.reward-level__badge {
+  max-width: 45px;
+}
+
+.reward-level__badge__img {
+  width: 100%;
+}
+
+.reward-level__text {
+  width: 100%;
+  margin-left: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.reward-level__text__title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.reward-level__text__next-level {
+  font-size: 11px;
+  font-weight: 400;
+  color: #8A8A8A;
+}
+
+.reward-level__text__points {
+  font-size: 15px;
+  font-weight: 600;
+  text-align: right;
+}
+
+.reward-level__text__small {
+  font-size: 11px;
+  font-weight: 400;
+}
+
+/* AddTripForm */
+
+.tripform {
+  max-width: 568px;
+}
+
+.tripform--subtitle {
+  margin-top: 10px;
+}
+
+
+.tripform,
+.tripform--form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.tripform--form input,
+.tripform--form select {
+  width: 269px;
+  height: 40px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+input,
+select {
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+.tripform--form--checkbox {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#addtrip--form--hold--checkbox,
+#addtrip--form--carryon--checkbox {
+  height: 20px;
+  width: 20px;
+}
+
+.button-back {
+  margin-right: 10px;
+}
+
+/* SetGoalForm */
+
+.slider {
+  width: 90%;
+  display: grid;
+  justify-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.slider-input_container {
+  width: 70%;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0;
+  height: 20px;
+  background-color: #d9d9d9;
+  box-shadow: -200px 0 0 200px #00bbb0;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 100%;
+  border-radius: 100px;
+  background-color: #d9d9d9;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0;
+}
+
+.luggage-goal-weight_container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* Rewards */
+
+.my-rewards__header,
+.my-rewards__redeem-button,
+.my-rewards__history__title {
+  display: flex;
+}
+
+.my-rewards__header {
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.my-rewards__redeem-button {
+  align-items: center;
+}
+
+.my-rewards__history__title {
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+/* RewardHistoryItem */
+
+.reward-history-item {
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  width: 100%;
+  margin: 0 auto 18px auto;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.reward-history-item__info-left>* {
+  text-align: left;
+}
+
+.reward-history-item__info-right>* {
+  text-align: right;
+}
+
+.reward-history-item__info__title,
+.reward-history-item__info__points {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.reward-history-item__info__desc,
+.reward-history-item__info__date {
+  font-size: 0.7rem;
+  color: #8a8a8a;
 }
