@@ -1,6 +1,7 @@
 const sqlite3 = require('sqlite3')
 const db = new sqlite3.Database(process.env.TEST_DATABASE || './database/database.sqlite')
 
+// fake user login before each request
 async function onRequestHook (req, res, next) {  
     db.get(`SELECT * FROM User WHERE name = $name`, {
         $name: process.env.LOGGED_IN_USER_NAME
